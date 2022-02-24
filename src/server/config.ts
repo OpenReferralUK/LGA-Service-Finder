@@ -12,18 +12,6 @@ export default {
         database: process.env.DATABASE_DATABASE || 'resources'
     },
 
-    ppk: {
-        key: process.env.PPK_KEY || 'key',
-        secret: process.env.PPK_SECRET || 'secret'
-    },
-
-    aws: {
-        key: process.env.AWS_ACCESS_KEY_ID || 'key',
-        secret: process.env.AWS_SECRET_ACCESS_KEY || 'secret',
-
-        bucket: process.env.AWS_BUCKET || 'c19learningexchange.esd.org.uk'
-    },
-
     search: {
         root: process.env.WEBSERVICES_ROOT || 'api.porism.com/ServiceDirectoryServiceCombined'
     },
@@ -35,10 +23,5 @@ export default {
 		baseUrl: 'https://khub.net',
         contextPath: '/o/group.rest.application',
         resultsPerPage: 1000
-    },
-
-    kml: {
-        localSavePath: `D:\\Projects\\porism.lga.learningExchangeMap\\docs`,
-        checkInterval: 60 * 10
     }
 };

@@ -1,0 +1,63 @@
+.btn {
+    border-radius: 1rem;
+    text-transform: none;
+}
+
+.map-hover {
+    position: absolute;
+    z-index: 1000;
+    pointer-events: none;
+    min-width: 12rem;
+    background-color: white;
+
+    opacity: 0;
+}
+
+.map-hover.visible {
+    transition: opacity ease-in-out 0.4s;
+    opacity: 1;
+}
+
+.map-popup-logo {
+    border-radius: 100%;
+}
+
+.map-loading {
+    position: absolute;
+    
+    z-index: 900;
+    pointer-events: none;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 1rem;
+    background-color: white;
+
+    left: 50%;
+    margin-left: -2rem;
+    top: 50%;
+    margin-top: -2rem;
+
+    background-image: url('https://resources.esd.org.uk/images/common/loading.small.purple.gif');
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.badge-tag, .badge-category {
+    color: #000000;
+    background-color: #c7b0bc;
+    border-color: #c7b0bc;
+    border-radius: 100px;
+}
+
+.badge-category {
+    color: #ffffff;
+    background-color: #5a4099;
+}
+
+.badge-sm {
+    font-size: small;
+    margin: 0.4rem 0.4rem 0.4rem 0;
+    padding: 0.3rem 0.4rem 0.4rem 0.6rem;
+}
+
+

@@ -1,0 +1,414 @@
+@import "_variables.scss";
+@import "../../../node_modules/bootstrap/scss/bootstrap";
+
+$main-background-color: rgb(247, 245, 238);
+$main-border-color: #dfdfdf;
+$spacer: 1rem;
+
+$info-box-background-color: #f3e5d2;
+$info-box-border-color: #f1b667;
+
+$card-border: 1px solid rgba(0, 0, 0, 0.125);
+
+body {
+    background-color: $main-background-color;
+}
+
+#root {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.page-header {
+    background-color: $white;
+    padding-top: $spacer;
+    padding-bottom: $spacer;
+    display: flow-root;
+    color: $primary;
+    border-bottom: solid 1px $primary;
+
+    a {
+        color: $primary;
+    }
+
+    img.main-icon {
+        height: 2 * $spacer;
+        padding-right: 0.5 * $spacer;
+        padding-bottom: 0.5 * $spacer;
+        filter: drop-shadow(0 0.4rem 0.1rem rgba(0, 0, 0, 0.4));
+    }
+}
+
+.page-main {
+    flex: 1 1 auto;
+    display: flex;
+}
+
+.page-footer {
+    margin-top: auto;
+    padding-top: 2 * $spacer;
+    padding-bottom: 2 * $spacer;
+    background-color: $primary;
+    color: $white;
+
+    a {
+        color: $white;
+    }
+}
+
+h1 a {
+    text-decoration: none;
+}
+
+.results {
+    h6,
+    .h6,
+    h5,
+    .h5,
+    h4,
+    .h4,
+    h3,
+    .h3,
+    h2,
+    .h2,
+    h1,
+    .h1 {
+        margin-top: 1.5em;
+        margin-bottom: 0.8em;
+        font-weight: 500;
+        line-height: 1.2;
+    }
+}
+
+.main-search {
+    background-color: $white;
+    border: solid 2px $primary;
+    border-radius: $border-radius;
+    padding: 2 * $spacer;
+
+    nav {
+        a {
+            text-decoration: none;
+            background-color: rgba(0, 0, 0, 0.03);
+            border: solid 1px $main-border-color;
+            border-left: none;
+            color: $body-color;
+            padding: $spacer;
+            text-align: center;
+            line-height: 1.2em;
+
+            &.active {
+                background-color: $primary;
+                font-weight: bolder;
+                color: $white;
+                border-color: $primary;
+            }
+
+            &:first-child {
+                border-top-left-radius: $border-radius;
+                border-bottom-left-radius: $border-radius;
+                border-left: solid 1px $main-border-color;
+            }
+
+            &:last-child {
+                border-top-right-radius: $border-radius;
+                border-bottom-right-radius: $border-radius;
+            }
+        }
+    }
+}
+
+.card {
+    border: $card-border;
+
+    .card-header {
+        border: none;
+    }
+
+    .card-body {
+        border-top: $card-border;
+    }
+}
+
+.card.api {
+    font-size: smaller;
+
+    .card-header {
+        background-color: $white;
+        border: none;
+    }
+
+    .card-body {
+        border-top: $card-border;
+
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+    }
+}
+
+.accordion {
+    .accordion-item {
+        border-radius: 0;
+        border: none;
+        border-bottom: $card-border;
+
+        .accordion-header {
+            padding: 0.5 * $spacer $spacer;
+            padding-right: 1.5 * $spacer;
+
+            border-radius: 0;
+            border-color: darken($primary, 10%);
+            background-color: $primary;
+            color: $white;
+            transition: color, background-color 0.1s ease-in-out;
+
+            &.collapsed {
+                transition: color, background-color 0.1s ease-in-out;
+                background-color: $secondary;
+                border-color: darken($secondary, 10%);
+                color: $body-color;
+            }
+        }
+    }
+}
+
+[data-bs-toggle="collapse"] {
+    position: relative;
+    padding-right: 1.5 * $spacer;
+
+    &::after {
+        position: absolute;
+        display: block;
+        right: 0.5 * $spacer;
+        top: 0.5 * $spacer;
+
+        content: "\f106"; //"\f107";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        -webkit-font-smoothing: antialiased;
+
+        transition: transform 0.1s ease-in-out;
+    }
+
+    &.collapsed {
+        &::after {
+            transform: rotate(180deg) translateY(-1px);
+        }
+    }
+}
+
+.developers {
+    .form-control {
+        font-size: small;
+        margin-bottom: 2em;
+    }
+}
+
+.developer-buttons{
+    .btn{
+        margin-right: 0.5em;
+    }
+}
+
+select.form-control {
+    appearance: auto;
+}
+
+.developer-text {
+    font-size: small;
+}
+
+input[type="number"].input-short {
+    width: 4 * $spacer;
+    padding-right: 0;
+}
+
+a[target]:not([target="_self"]):not([target="_parent"]):not([target="_top"]):not(.no-external-icon) {
+    fill: currentColor;
+    &::after {
+        content: "\f35d";
+
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        -webkit-font-smoothing: antialiased;
+        display: inline-block;
+        font-style: normal;
+        font-variant: normal;
+        text-rendering: auto;
+        line-height: 1;
+
+        position: relative;
+        margin-left: 0.2 * $spacer;
+        bottom: 1px;
+        font-size: (10 / 144) * 10em;
+    }
+}
+
+.info-box {
+    padding: $spacer;
+    border: solid 1px $info-box-border-color;
+    background-color: $info-box-background-color;
+}
+
+.services {
+    .service-row {
+        padding: 1.5 * $spacer $spacer;
+
+        border-top: $card-border;
+
+        &:nth-child(odd) {
+            background-color: $white;
+        }
+
+        &:last-child {
+            border-bottom: $card-border;
+        }
+
+        h3 {
+            color: $primary;
+        }
+    }
+
+    .service-info {
+        margin-top: $spacer;
+    }
+}
+
+.right {
+    float: right;
+}
+
+#all-filter-heading {
+    padding: 0.5rem 1rem;
+}
+
+.about{
+    li{
+        margin-bottom: 1rem;
+    }
+}
+
+.sidebar {
+    background-color: $white;
+
+    .section {
+        margin: 0 $spacer;
+        padding: $spacer 0;
+        border-bottom: solid 1px $primary;
+
+        &:last-child {
+            border-bottom: none;
+        }
+
+        dl {
+            margin-bottom: 0;
+        }
+
+        .section-item {
+            margin-bottom: $spacer;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            dt {
+                font-weight: normal;
+                margin-bottom: 0.25 * $spacer;
+            }
+
+            dd {
+                word-break: break-all;
+            }
+        }
+    }
+}
+
+.map {
+    height: 600px;
+    width: 100%;
+
+    &.hidden {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+    }
+}
+
+.popup-locations {
+    font-size: small;
+    max-height: 14 * $spacer;
+    overflow-y: auto;
+    margin-top: 0.5 * $spacer;
+
+    .popup-location:not(:last-child) {
+        padding-bottom: 0.5 * $spacer;
+        border-bottom: $card-border;
+        margin-bottom: 0.5 * $spacer;
+    }
+}
+
+@media print {
+    .hide-print {
+        display: none;
+    }
+}
+
+.badge {
+    border: $card-border;
+    &.bg-secondary {
+        color: $body-color;
+    }
+}
+
+a.badge {
+    text-decoration: none;
+}
+
+.ol-popup {
+    position: absolute;
+    background-color: white;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    border-radius: $border-radius;
+    border: 1px solid #cccccc;
+    bottom: 12px;
+    left: -50px;
+    min-width: 280px;
+}
+.ol-popup:after,
+.ol-popup:before {
+    top: 100%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+.ol-popup:after {
+    border-top-color: white;
+    border-width: 10px;
+    left: 48px;
+    margin-left: -10px;
+}
+.ol-popup:before {
+    border-top-color: #cccccc;
+    border-width: 11px;
+    left: 48px;
+    margin-left: -11px;
+}
+.ol-popup-closer {
+    text-decoration: none;
+    position: absolute;
+    top: 0;
+    right: 6px;
+}
+.ol-popup-closer:after {
+    content: "✕";
+    font-size: small;
+}

@@ -9,4 +9,4 @@ Configure the Service Finder via the [Developers page](https://servicefinder.esd
 
 See the [About page](https://servicefinder.esd.org.uk/about) for more information.
 
-This repository has been moved to [Bitbucket](https://bitbucket.org/pfiks/lga-service-finder)
+This repository has been moved to [Bitbucket](https://bitbucket.org/pfiks/lga-service-finder).
